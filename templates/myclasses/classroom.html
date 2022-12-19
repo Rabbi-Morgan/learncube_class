@@ -1,0 +1,16 @@
+{% block content %}
+{% include 'myclasses/alert.html' %}
+<div>
+    <h1>Virtual Classroom Details</h1>
+    {% if classroom.uuid %}
+        <p>UUID: {{ classroom.uuid }}</p>
+        <p>Teacher Name: {{ classroom.teacher_first_name }} {{ classroom.teacher_last_name }}</p>
+        <br><br>
+    {% else %}
+        <p>Classroom details not found</p>
+    {% endif %}
+</div>
+<br><br>
+<a href={% url 'index' %}>Back Home</a>
+
+{% endblock %}
